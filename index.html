@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redesign Netflix</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Seção Navbar -->
+    <div class="overlay"></div>
+    <nav class="nav-navbar">
+        <div class="navbar-logo"><a href=""><img width="150px" src="images/logos_netflix.png" alt=""></a></div>
+        <div class="menu-item">
+            <a href="#">Filmes</a>
+            <a href="#">Séries</a>
+            <a href="#">Novidades e Populares</a>
+        </div>
+        <div class="menu-extra">
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">ID &#x25BD;</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </div>
+            <a class="btn-netflix" href="#">Entrar</a>
+        </div>
+    </nav>
+    
+    <!-- Seção Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2 class="Hero-header">Aproveite a Programação Onde e Quando Quiser</h2>
+            <p>Assista a qualquer coisa online no seu computador pessoal ou em dispositivos conectados à Internet que suportem o aplicativo Netflix, e use o download para assistir durante viagens sem conexão com a Internet.</p>
+            <a href="">Cadastre-se Agora</a>
+        </div>
+        <div class="anime-image">
+            <img width="560" src="images/anime-img.jpg" alt="">
+        </div>
+    </section>
+
+
+    <!-- Conteúdo de Serviços -->
+    <section class="service">
+        <h2 class="service-text">Os Melhores Serviços que <br> Não Decepcionam</h2>
+        <div class="service-card">
+            <div class="service-list">
+                <header class="service-header">
+                    <img src="images/1.png" alt="TV">
+                </header>
+                <h4 class="service-title">Assista direto na TV</h4>
+                <p class="service-description">
+                    Assista na Smart TV, Playstation, Xbox, Chromecast, Apple TV, player Blu-ray, e muito mais
+                </p>
+            </div>
+            <div class="service-list">
+                <header class="service-header">
+                    <img src="images/2.png" alt="Celular">
+                </header>
+                <h4 class="service-title">Download para assistir offline</h4>
+                <p class="service-description">
+                    Salve facilmente para ter sempre séries e filmes para assistir
+                </p>
+            </div>
+            <div class="service-list">
+                <header class="service-header">
+                    <img src="images/3.png" alt="PC">
+                </header>
+                <h4 class="service-title">Acesso em vários dispositivos</h4>
+                <p class="service-description">
+                    Transmita filmes e séries ilimitados no celular, tablet, notebook e na sua TV
+                </p>
+            </div>
+            <div class="service-list">
+                <header class="service-header">
+                    <img width="" src="images/4.png" alt="criança">
+                </header>
+                <h4 class="service-title">Crie perfis para crianças</h4>
+                <p class="service-description">
+                    Perfil infantil com controle parental protegido por PIN para limitar a classificação etária do conteúdo que as crianças podem assistir
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Seção Sobre -->
+    <section class="about">
+        <div class="about-image">
+            <img width="560" src="images/photo.png" alt="foto">
+        </div>
+        <div class="about-text">
+            <h2>Assista a Filmes, Séries Ilimitadas e Muito Mais</h2>
+        </div>
+    </section>
+
+
+    <!-- Seção Popular -->
+    <section class="popular">
+        <div class="popular-content">
+            <div class="popular-navigasi">
+                <h2>Filmes e Séries <br> Populares Neste Mês</h2>
+            </div>
+            <div class="popular-button">
+                <a href="">Ver Todos</a>
+            </div>
+        </div>
+        <div class="popular-card">
+            <div class="popular-list">
+                <header class="popular-image">
+                    <img src="images/p-1.png" alt="logo1">
+                </header>
+                <div class="popular-title">
+                    <h4 class="popular-text">Peaky Blinders</h4>
+                    <p class="popular-paragraph">Crime, Drama</p>
+                </div>
+                <footer class="popular-footer">
+                    <img src="images/Union.png" alt="">
+                    <p class="footer-text">8.8/10 IMDb</p>
+                </footer>
+            </div>
+            <div class="popular-list">
+                <header class="popular-image">
+                    <img src="images/p-2.png" alt="logo2">
+                </header>
+                <div class="popular-title">
+                    <h4 class="popular-text">Spider-Man: No Way Home</h4>
+                    <p class="popular-paragraph">Ação, Aventura, Fantasia</p>
+                </div>
+                <footer class="popular-footer">
+                    <img src="images/Union.png" alt="">
+                    <p class="footer-text">8.8/10 IMDb</p>
+                </footer>
+            </div>
+            <div class="popular-list">
+                <header class="popular-image">
+                    <img src="images/p-3.png" alt="logo3">
+                </header>
+                <div class="popular-title">
+                    <h4 class="popular-text">Arcane: League of Legends</h4>
+                    <p class="popular-paragraph">Animação, Ação, Aventura</p>
+                </div>
+                <footer class="popular-footer">
+                    <img src="images/Union.png" alt="">
+                    <p class="footer-text">9.2/10 IMDb</p>
+                </footer>
+            </div>
+            <div class="popular-list">
+                <header class="popular-image">
+                    <img src="images/p-4.png" alt="logo4">
+                </header>
+                <div class="popular-title">
+                    <h4 class="popular-text">Joker</h4>
+                    <p class="popular-paragraph">Crime, Drama, Suspense</p>
+                </div>
+                <footer class="popular-footer">
+                    <img src="images/Union.png" alt="">
+                    <p class="footer-text">8,4/10 IMDb</p>
+                </footer>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Seção de Assinatura -->
+    <section class="member">
+        <h2 class="member-judul">Escolha o Plano Ideal <br> Para Você</h2>
+        <div class="member-content">
+            <div class="member-card">
+                <div class="member-list">
+                    <header class="member-header">
+                        <h4 class="member-title">Padrão</h4>
+                    </header>
+                    <div class="member-number">
+                        <h1 class="member-harga">R$ 120,00</h1>
+                        <p>/mês</p>
+                    </div>
+                    <div class="member-populasi">
+                        <img src="images/cheklist.png" alt="">
+                        <p>Celular, Tablet, Computador, TV</p>
+                    </div>
+                    <div class="member-populasi">
+                        <img src="images/cheklist.png" alt="">
+                        <p>Sem anúncios</p>
+                    </div>
+                    <div class="member-populasi">
+                        <img src="images/cheklist.png" alt="">
+                        <p>Cancele quando quiser</p>
+                    </div>
+                    <div class="member-populasi">
+                        <img src="images/cheklist.png" alt="">
+                        <p>Qualidade de vídeo boa</p>
+                    </div>
+                    <div class="member-populasi">
+                        <img src="images/cheklist.png" alt="">
+                        <p>Resolução 480p</p>
+                    </div>
+                    <div class="member-populasi-item">
+                        <p>Resolução 720p</p>
+                    </div>
+                    <div class="member-populasi-item">
+                        <p>Resolução 1080p</p>
+                    </div>
+                    <div class="member-populasi-item">
+                        <p>Resolução 4K+HDR</p>
+                    </div>
+                    <div class="member-button">
+                        <a href="">Escolher Plano</a>
+                    </div>
+                </div>
+                <div class="member-list">
+                    <header class="member-header">
+                        <h4 class="member-title">Padrão</h4>
+                    </header>
+                    <div class="member-number">
+                        <h1 class="member-harga">R$ 153,00</h1>
+                        <p>/mês</p>
+                    </div>
+                    <div class="member-populasi">
+                        <img src="images/cheklist.png" alt="">
+                        <p>Celular, Tablet, Computador, TV</p>
+                    </div>
+                    <div class="member-populasi">
+                        <img src="images/cheklist.png" alt="">
+                        <p>Sem anúncios</p>
+                    </div>
+                    <div class="member-populasi">
+                        <img src="images/cheklist.png" alt="">
+                        <p>Cancele quando quiser</p>
+                    </div>
+                    <div class="member-populasi">
+                        <img src="images/cheklist.png" alt="">
+                        <p>Qualidade de vídeo boa</p>
+                    </div>
+                    <div class="member-populasi">
+                        <img src="images/cheklist.png" alt="">
+                        <p>Resolução 480p</p>
+                    </div>
+                    <div class="member-populasi">
+                        <img src="images/cheklist.png" alt="">
+                        <p>Resolução 720p</p>
+                    </div>
+                    <div class="member-populasi">
+                        <img src="images/cheklist.png" alt="">
+                        <p>Resolução 1080p</p>
+                    </div>
+                    <div class="member-populasi-item">
+                        <p>Resolução 4K+HDR</p>
+                    </div>
+                    <div class="member-button">
+                        <a href="">Escolher Plano</a>
+                    </div>
+                </div>
+                <div class="member-list">
+                    <header class="member-header">
+                        <h4 class="member-title">Padrão</h4>
+                    </header>
+                    <div class="member-number">
+                        <h1 class="member-harga">R$ 186,00</h1>
+                        <p>/mês</p>
+                    </div>
+                    <div class="member-populasi">
+                        <img src="images/cheklist.png" alt="">
+                        <p>Celular, Tablet, Computador, TV</p>
+                    </div>
+                    <div class="member-populasi">
+                        <img src="images/cheklist.png" alt="">
+                        <p>Sem anúncios</p>
+                    </div>
+                    <div class="member-populasi">
+                        <img src="images/cheklist.png" alt="">
+                        <p>Cancele quando quiser</p>
+                    </div>
+                    <div class="member-populasi">
+                        <img src="images/cheklist.png" alt="">
+                        <p>Qualidade de vídeo boa</p>
+                    </div>
+                    <div class="member-populasi">
+                        <img src="images/cheklist.png" alt="">
+                        <p>Resolução 480p</p>
+                    </div>
+                    <div class="member-populasi">
+                        <img src="images/cheklist.png" alt="">
+                        <p>Resolução 720p</p>
+                    </div>
+                    <div class="member-populasi">
+                        <img src="images/cheklist.png" alt="">
+                        <p>Resolução 1080p</p>
+                    </div>
+                    <div class="member-populasi">
+                        <img src="images/cheklist.png" alt="">
+                        <p>Resolução 4K+HDR</p>
+                    </div>
+                    <div class="member-button">
+                        <a href="">Escolher Plano</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Seção Assinatura Newsletter -->
+    <section class="langganan">
+        <div class="langganan-banner">
+            <h2 class="langganan-text">Assine para Receber as Últimas Notícias e <br> Seja um Membro</h2>
+            <div class="langganan-content">
+                <input type="text" placeholder="Digite seu email">
+                <button class="btn-langganan">Assinar</button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Seção Footer -->
+    <section class="footer">
+        <div class="footer-header">
+            <img src="images/logos_netflix.png" alt="">
+            <p>Streaming sem anúncios e <br> mensalidade acessível</p>
+        </div>
+        <div class="footer-content">
+            <h2>Empresa</h2>
+            <div class="footer-text">
+                <p>Sobre Nós</p>
+                <p>Contato</p>
+                <p>Carreiras</p>
+                <p>Blog</p>
+                <p>Relações com Investidores</p>
+            </div>
+        </div>
+        <div class="footer-content">
+            <h2>Obtenha Ajuda</h2>
+            <div class="footer-text">
+                <p>FAQ</p>
+                <p>Central de Ajuda</p>
+                <p>Conta</p>
+            </div>
+        </div>
+        <div class="footer-content">
+            <h2>Outros</h2>
+            <div class="footer-text">
+                <p>Resgatar Cartão Presente</p>
+                <p>Netflix Originals</p>
+                <p>Centro de Mídia</p>
+                <p>Blog</p>
+                <p>Relações com Investidores</p>
+            </div>
+        </div>
+        <div class="footer-content">
+            <h2>Baixe Nossos Aplicativos</h2>
+            <div class="footer-image">
+                <a href="">
+                    <img src="images/app-store.png" alt="">
+                    <img src="images/google-play.png" alt="">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
