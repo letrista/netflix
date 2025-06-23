@@ -2,367 +2,316 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Redesign Netflix</title>
-    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="images/favicon.png" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <style>
+        html,
+        body {
+            overflow-x: hidden;
+        }
+
+        .btn-primary {
+            @apply inline-flex items-center justify-center py-4 px-8 rounded-full text-white font-semibold text-lg leading-tight transition-all duration-300 ease-in-out;
+            background: rgba(229, 9, 20, 0.9);
+            border: 2px solid rgba(229, 9, 20, 1);
+            box-shadow: 0 4px 12px rgba(229, 9, 20, 0.5);
+            min-width: 220px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            border-radius: 50px;
+        }
+
+        .btn-primary::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 50px;
+            background: rgba(229, 9, 20, 0.2);
+            filter: blur(10px);
+            opacity: 0.5;
+            z-index: -1;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: rgba(229, 9, 20, 1);
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(229, 9, 20, 0.6);
+        }
+
+        .btn-primary:hover::before {
+            background: rgba(229, 9, 20, 0.3);
+            filter: blur(15px);
+            opacity: 1;
+        }
+
+        .btn-secondary {
+            @apply inline-flex items-center justify-center py-4 px-8 rounded-full text-white font-semibold text-lg leading-tight transition-all duration-300 ease-in-out;
+            background: rgba(31, 31, 31, 0.9);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+            min-width: 220px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            border-radius: 50px;
+        }
+
+        .btn-secondary::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            filter: blur(8px);
+            opacity: 0.5;
+            z-index: -1;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(31, 31, 31, 1);
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover::before {
+            background: rgba(255, 255, 255, 0.2);
+            filter: blur(12px);
+            opacity: 0.9;
+        }
+    </style>
 </head>
 
-<body>
-    <!-- Seção Navbar -->
-    <div class="overlay"></div>
-    <nav class="nav-navbar">
-        <div class="navbar-logo"><a href=""><img width="150px" src="images/logos_netflix.png" alt=""></a></div>
-        <div class="menu-item">
-            <a href="#">Filmes</a>
-            <a href="#">Séries</a>
-            <a href="#">Novidades e Populares</a>
+<body class="bg-black text-white font-sans">
+
+    <header
+        class="flex flex-wrap items-center justify-between px-6 md:px-16 py-6 border-b border-neutral-800 select-none">
+        <a href="#">
+            <img src="images/logos_netflix.png" alt="Netflix Logo" class="w-32 md:w-40" />
+        </a>
+        <nav class="hidden md:flex items-center gap-10 text-base">
+            <a href="#" class="hover:text-red-600 transition">Início</a>
+            <a href="#" class="hover:text-red-600 transition">Filmes</a>
+            <a href="#" class="hover:text-red-600 transition">Séries</a>
+            <a href="#" class="hover:text-red-600 transition">Lançamentos</a>
+        </nav>
+        <div class="flex items-center gap-6">
+            <a href="#" class="btn-secondary hidden sm:inline">Entrar</a>
+            <a href="#" class="btn-primary">Assine Agora</a>
         </div>
-        <div class="menu-extra">
-            <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">ID &#x25BD;</button>
-                <div id="myDropdown" class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                </div>
+    </header>
+
+    <section
+        class="flex flex-col-reverse lg:flex-row items-center justify-between px-6 md:px-16 py-20 gap-10 max-w-7xl mx-auto">
+        <div class="max-w-xl text-center lg:text-left">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight gradient-text">
+                Assista Onde e Quando Quiser
+            </h1>
+            <p class="text-neutral-400 mb-8">
+                Séries, filmes e muito mais. Aproveite no seu celular, tablet, TV ou notebook, além de poder fazer
+                download e assistir offline.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
+                <a href="#" class="btn-primary">Comece Agora</a>
+                <a href="#" class="btn-secondary">Saiba Mais</a>
             </div>
-            <a class="btn-netflix" href="#">Entrar</a>
         </div>
-    </nav>
-    
-    <!-- Seção Hero -->
-    <section class="hero">
-        <div class="hero-content">
-            <h2 class="Hero-header">Aproveite a Programação Onde e Quando Quiser</h2>
-            <p>Assista a qualquer coisa online no seu computador pessoal ou em dispositivos conectados à Internet que suportem o aplicativo Netflix, e use o download para assistir durante viagens sem conexão com a Internet.</p>
-            <a href="">Cadastre-se Agora</a>
-        </div>
-        <div class="anime-image">
-            <img width="560" src="images/anime-img.jpg" alt="">
-        </div>
+        <img src="images/anime-img.jpg" alt="Anime"
+            class="w-[90%] max-w-[520px] rounded-3xl shadow-xl object-cover hover-glow transition" />
     </section>
 
-
-    <!-- Conteúdo de Serviços -->
-    <section class="service">
-        <h2 class="service-text">Os Melhores Serviços que <br> Não Decepcionam</h2>
-        <div class="service-card">
-            <div class="service-list">
-                <header class="service-header">
-                    <img src="images/1.png" alt="TV">
-                </header>
-                <h4 class="service-title">Assista direto na TV</h4>
-                <p class="service-description">
-                    Assista na Smart TV, Playstation, Xbox, Chromecast, Apple TV, player Blu-ray, e muito mais
-                </p>
+    <section class="px-6 md:px-16 py-20 max-w-7xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-14 gradient-text">Funcionalidades que Encantam</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+            <div class="bg-neutral-900 p-8 rounded-3xl hover-glow transition">
+                <img src="images/1.png" alt="TV" class="mb-6 w-16" />
+                <h4 class="font-semibold mb-2 text-red-600">Assista na TV</h4>
+                <p class="text-neutral-400">Smart TV, Playstation, Xbox, Chromecast, Apple TV e mais.</p>
             </div>
-            <div class="service-list">
-                <header class="service-header">
-                    <img src="images/2.png" alt="Celular">
-                </header>
-                <h4 class="service-title">Download para assistir offline</h4>
-                <p class="service-description">
-                    Salve facilmente para ter sempre séries e filmes para assistir
-                </p>
+            <div class="bg-neutral-900 p-8 rounded-3xl hover-glow transition">
+                <img src="images/2.png" alt="Celular" class="mb-6 w-16" />
+                <h4 class="font-semibold mb-2 text-red-600">Baixe para Assistir Offline</h4>
+                <p class="text-neutral-400">Leve suas séries e filmes favoritos para qualquer lugar.</p>
             </div>
-            <div class="service-list">
-                <header class="service-header">
-                    <img src="images/3.png" alt="PC">
-                </header>
-                <h4 class="service-title">Acesso em vários dispositivos</h4>
-                <p class="service-description">
-                    Transmita filmes e séries ilimitados no celular, tablet, notebook e na sua TV
-                </p>
+            <div class="bg-neutral-900 p-8 rounded-3xl hover-glow transition">
+                <img src="images/3.png" alt="PC" class="mb-6 w-16" />
+                <h4 class="font-semibold mb-2 text-red-600">Vários Dispositivos</h4>
+                <p class="text-neutral-400">Assista em celular, tablet, notebook e TV com total liberdade.</p>
             </div>
-            <div class="service-list">
-                <header class="service-header">
-                    <img width="" src="images/4.png" alt="criança">
-                </header>
-                <h4 class="service-title">Crie perfis para crianças</h4>
-                <p class="service-description">
-                    Perfil infantil com controle parental protegido por PIN para limitar a classificação etária do conteúdo que as crianças podem assistir
-                </p>
+            <div class="bg-neutral-900 p-8 rounded-3xl hover-glow transition">
+                <img src="images/4.png" alt="Kids" class="mb-6 w-16" />
+                <h4 class="font-semibold mb-2 text-red-600">Perfis Infantis</h4>
+                <p class="text-neutral-400">Ambiente seguro e personalizado com controle parental.</p>
             </div>
         </div>
     </section>
 
-
-    <!-- Seção Sobre -->
-    <section class="about">
-        <div class="about-image">
-            <img width="560" src="images/photo.png" alt="foto">
-        </div>
-        <div class="about-text">
-            <h2>Assista a Filmes, Séries Ilimitadas e Muito Mais</h2>
+    <section
+        class="flex flex-col lg:flex-row items-center justify-between px-6 md:px-16 py-20 gap-10 max-w-7xl mx-auto">
+        <img src="images/photo.png" alt="Sobre"
+            class="w-[90%] max-w-[520px] rounded-2xl shadow-xl object-cover hover-glow transition" />
+        <div class="max-w-xl text-center lg:text-left">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 gradient-text">Entretenimento Sem Limites</h2>
+            <p class="text-neutral-400">
+                Explore um catálogo ilimitado de filmes, séries, documentários e muito mais, com qualidade superior e
+                sem anúncios.
+            </p>
+            <a href="#" class="btn-primary mt-8 inline-block">Assinar Agora</a>
         </div>
     </section>
 
-
-    <!-- Seção Popular -->
-    <section class="popular">
-        <div class="popular-content">
-            <div class="popular-navigasi">
-                <h2>Filmes e Séries <br> Populares Neste Mês</h2>
-            </div>
-            <div class="popular-button">
-                <a href="">Ver Todos</a>
-            </div>
+    <section class="px-6 md:px-16 py-20 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center justify-between mb-12 gap-6">
+            <h2 class="text-3xl md:text-4xl font-bold gradient-text">Populares do Mês</h2>
+            <a href="#" class="text-red-600 hover:underline">Ver Todos</a>
         </div>
-        <div class="popular-card">
-            <div class="popular-list">
-                <header class="popular-image">
-                    <img src="images/p-1.png" alt="logo1">
-                </header>
-                <div class="popular-title">
-                    <h4 class="popular-text">Peaky Blinders</h4>
-                    <p class="popular-paragraph">Crime, Drama</p>
-                </div>
-                <footer class="popular-footer">
-                    <img src="images/Union.png" alt="">
-                    <p class="footer-text">8.8/10 IMDb</p>
-                </footer>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+            <div class="bg-neutral-900 p-6 rounded-3xl hover-glow transition">
+                <img src="images/p-1.png" alt="Peaky Blinders" class="mb-5 rounded-xl w-full object-cover" />
+                <h4 class="font-semibold mb-1 text-red-600">Peaky Blinders</h4>
+                <p class="text-neutral-400">Crime, Drama</p>
+                <p class="mt-3 text-sm text-neutral-500">⭐ 8.8 IMDb</p>
             </div>
-            <div class="popular-list">
-                <header class="popular-image">
-                    <img src="images/p-2.png" alt="logo2">
-                </header>
-                <div class="popular-title">
-                    <h4 class="popular-text">Spider-Man: No Way Home</h4>
-                    <p class="popular-paragraph">Ação, Aventura, Fantasia</p>
-                </div>
-                <footer class="popular-footer">
-                    <img src="images/Union.png" alt="">
-                    <p class="footer-text">8.8/10 IMDb</p>
-                </footer>
+            <div class="bg-neutral-900 p-6 rounded-3xl hover-glow transition">
+                <img src="images/p-2.png" alt="Spider-Man" class="mb-5 rounded-xl w-full object-cover" />
+                <h4 class="font-semibold mb-1 text-red-600">Spider-Man: No Way Home</h4>
+                <p class="text-neutral-400">Ação, Aventura</p>
+                <p class="mt-3 text-sm text-neutral-500">⭐ 8.8 IMDb</p>
             </div>
-            <div class="popular-list">
-                <header class="popular-image">
-                    <img src="images/p-3.png" alt="logo3">
-                </header>
-                <div class="popular-title">
-                    <h4 class="popular-text">Arcane: League of Legends</h4>
-                    <p class="popular-paragraph">Animação, Ação, Aventura</p>
-                </div>
-                <footer class="popular-footer">
-                    <img src="images/Union.png" alt="">
-                    <p class="footer-text">9.2/10 IMDb</p>
-                </footer>
+            <div class="bg-neutral-900 p-6 rounded-3xl hover-glow transition">
+                <img src="images/p-3.png" alt="Arcane" class="mb-5 rounded-xl w-full object-cover" />
+                <h4 class="font-semibold mb-1 text-red-600">Arcane</h4>
+                <p class="text-neutral-400">Animação, Aventura</p>
+                <p class="mt-3 text-sm text-neutral-500">⭐ 9.2 IMDb</p>
             </div>
-            <div class="popular-list">
-                <header class="popular-image">
-                    <img src="images/p-4.png" alt="logo4">
-                </header>
-                <div class="popular-title">
-                    <h4 class="popular-text">Joker</h4>
-                    <p class="popular-paragraph">Crime, Drama, Suspense</p>
-                </div>
-                <footer class="popular-footer">
-                    <img src="images/Union.png" alt="">
-                    <p class="footer-text">8,4/10 IMDb</p>
-                </footer>
+            <div class="bg-neutral-900 p-6 rounded-3xl hover-glow transition">
+                <img src="images/p-4.png" alt="Joker" class="mb-5 rounded-xl w-full object-cover" />
+                <h4 class="font-semibold mb-1 text-red-600">Joker</h4>
+                <p class="text-neutral-400">Crime, Drama, Suspense</p>
+                <p class="mt-3 text-sm text-neutral-500">⭐ 8.4 IMDb</p>
             </div>
         </div>
     </section>
 
+    <section class="px-6 md:px-16 py-20 max-w-7xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-14 gradient-text">
+            Escolha seu Plano
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
 
-    <!-- Seção de Assinatura -->
-    <section class="member">
-        <h2 class="member-judul">Escolha o Plano Ideal <br> Para Você</h2>
-        <div class="member-content">
-            <div class="member-card">
-                <div class="member-list">
-                    <header class="member-header">
-                        <h4 class="member-title">Padrão</h4>
-                    </header>
-                    <div class="member-number">
-                        <h1 class="member-harga">R$ 120,00</h1>
-                        <p>/mês</p>
-                    </div>
-                    <div class="member-populasi">
-                        <img src="images/cheklist.png" alt="">
-                        <p>Celular, Tablet, Computador, TV</p>
-                    </div>
-                    <div class="member-populasi">
-                        <img src="images/cheklist.png" alt="">
-                        <p>Sem anúncios</p>
-                    </div>
-                    <div class="member-populasi">
-                        <img src="images/cheklist.png" alt="">
-                        <p>Cancele quando quiser</p>
-                    </div>
-                    <div class="member-populasi">
-                        <img src="images/cheklist.png" alt="">
-                        <p>Qualidade de vídeo boa</p>
-                    </div>
-                    <div class="member-populasi">
-                        <img src="images/cheklist.png" alt="">
-                        <p>Resolução 480p</p>
-                    </div>
-                    <div class="member-populasi-item">
-                        <p>Resolução 720p</p>
-                    </div>
-                    <div class="member-populasi-item">
-                        <p>Resolução 1080p</p>
-                    </div>
-                    <div class="member-populasi-item">
-                        <p>Resolução 4K+HDR</p>
-                    </div>
-                    <div class="member-button">
-                        <a href="">Escolher Plano</a>
-                    </div>
+            <div class="bg-neutral-900 p-8 rounded-3xl hover-glow transition flex flex-col justify-between">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-center text-red-600">Básico</h3>
+                    <p class="text-center text-4xl font-extrabold mb-4">R$19,90<span
+                            class="text-base font-normal">/mês</span></p>
+                    <ul class="text-neutral-400 space-y-3 mb-8">
+                        <li>✔︎ Qualidade SD</li>
+                        <li>✔︎ 1 Tela</li>
+                        <li>✔︎ Assista em celular e tablet</li>
+                        <li>✔︎ Download em 1 dispositivo</li>
+                    </ul>
                 </div>
-                <div class="member-list">
-                    <header class="member-header">
-                        <h4 class="member-title">Padrão</h4>
-                    </header>
-                    <div class="member-number">
-                        <h1 class="member-harga">R$ 153,00</h1>
-                        <p>/mês</p>
-                    </div>
-                    <div class="member-populasi">
-                        <img src="images/cheklist.png" alt="">
-                        <p>Celular, Tablet, Computador, TV</p>
-                    </div>
-                    <div class="member-populasi">
-                        <img src="images/cheklist.png" alt="">
-                        <p>Sem anúncios</p>
-                    </div>
-                    <div class="member-populasi">
-                        <img src="images/cheklist.png" alt="">
-                        <p>Cancele quando quiser</p>
-                    </div>
-                    <div class="member-populasi">
-                        <img src="images/cheklist.png" alt="">
-                        <p>Qualidade de vídeo boa</p>
-                    </div>
-                    <div class="member-populasi">
-                        <img src="images/cheklist.png" alt="">
-                        <p>Resolução 480p</p>
-                    </div>
-                    <div class="member-populasi">
-                        <img src="images/cheklist.png" alt="">
-                        <p>Resolução 720p</p>
-                    </div>
-                    <div class="member-populasi">
-                        <img src="images/cheklist.png" alt="">
-                        <p>Resolução 1080p</p>
-                    </div>
-                    <div class="member-populasi-item">
-                        <p>Resolução 4K+HDR</p>
-                    </div>
-                    <div class="member-button">
-                        <a href="">Escolher Plano</a>
-                    </div>
-                </div>
-                <div class="member-list">
-                    <header class="member-header">
-                        <h4 class="member-title">Padrão</h4>
-                    </header>
-                    <div class="member-number">
-                        <h1 class="member-harga">R$ 186,00</h1>
-                        <p>/mês</p>
-                    </div>
-                    <div class="member-populasi">
-                        <img src="images/cheklist.png" alt="">
-                        <p>Celular, Tablet, Computador, TV</p>
-                    </div>
-                    <div class="member-populasi">
-                        <img src="images/cheklist.png" alt="">
-                        <p>Sem anúncios</p>
-                    </div>
-                    <div class="member-populasi">
-                        <img src="images/cheklist.png" alt="">
-                        <p>Cancele quando quiser</p>
-                    </div>
-                    <div class="member-populasi">
-                        <img src="images/cheklist.png" alt="">
-                        <p>Qualidade de vídeo boa</p>
-                    </div>
-                    <div class="member-populasi">
-                        <img src="images/cheklist.png" alt="">
-                        <p>Resolução 480p</p>
-                    </div>
-                    <div class="member-populasi">
-                        <img src="images/cheklist.png" alt="">
-                        <p>Resolução 720p</p>
-                    </div>
-                    <div class="member-populasi">
-                        <img src="images/cheklist.png" alt="">
-                        <p>Resolução 1080p</p>
-                    </div>
-                    <div class="member-populasi">
-                        <img src="images/cheklist.png" alt="">
-                        <p>Resolução 4K+HDR</p>
-                    </div>
-                    <div class="member-button">
-                        <a href="">Escolher Plano</a>
-                    </div>
-                </div>
+                <a href="#" class="btn-primary w-full text-center">Assinar</a>
             </div>
+
+            <div
+                class="bg-neutral-900 p-8 rounded-3xl hover-glow transition flex flex-col justify-between border-2 border-red-600">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-center text-red-600">Padrão</h3>
+                    <p class="text-center text-4xl font-extrabold mb-4">R$32,90<span
+                            class="text-base font-normal">/mês</span></p>
+                    <ul class="text-neutral-400 space-y-3 mb-8">
+                        <li>✔︎ Qualidade Full HD</li>
+                        <li>✔︎ 2 Telas simultâneas</li>
+                        <li>✔︎ Assista em todos os dispositivos</li>
+                        <li>✔︎ Download em 2 dispositivos</li>
+                    </ul>
+                </div>
+                <a href="#" class="btn-primary w-full text-center">Assinar</a>
+            </div>
+
+            <div class="bg-neutral-900 p-8 rounded-3xl hover-glow transition flex flex-col justify-between">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-center text-red-600">Premium</h3>
+                    <p class="text-center text-4xl font-extrabold mb-4">R$55,90<span
+                            class="text-base font-normal">/mês</span></p>
+                    <ul class="text-neutral-400 space-y-3 mb-8">
+                        <li>✔︎ Qualidade Ultra HD 4K + HDR</li>
+                        <li>✔︎ 4 Telas simultâneas</li>
+                        <li>✔︎ Assista em todos os dispositivos</li>
+                        <li>✔︎ Download em até 6 dispositivos</li>
+                    </ul>
+                </div>
+                <a href="#" class="btn-primary w-full text-center">Assinar</a>
+            </div>
+
         </div>
     </section>
 
 
-    <!-- Seção Assinatura Newsletter -->
-    <section class="langganan">
-        <div class="langganan-banner">
-            <h2 class="langganan-text">Assine para Receber as Últimas Notícias e <br> Seja um Membro</h2>
-            <div class="langganan-content">
-                <input type="text" placeholder="Digite seu email">
-                <button class="btn-langganan">Assinar</button>
-            </div>
+    <section
+        class="bg-neutral-900 px-6 md:px-16 py-20 rounded-3xl shadow-xl max-w-7xl mx-auto flex flex-col gap-10 items-center text-center">
+
+        <h2 class="text-3xl md:text-4xl font-bold leading-snug gradient-text">
+            Assine para Receber as Últimas Notícias <br class="hidden sm:block" />
+            e Seja um Membro
+        </h2>
+
+        <div class="flex flex-col md:flex-row items-center justify-center gap-6 w-full">
+            <input type="email" placeholder="Digite seu e-mail"
+                class="w-full md:w-[400px] px-8 py-5 rounded-full bg-neutral-800 text-white border border-neutral-700 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-red-600 text-base transition" />
+
+            <button
+                class="px-10 py-5 rounded-full text-white font-semibold text-lg leading-tight transition-all duration-300 ease-in-out min-w-[220px] border-2 border-red-600 bg-red-700/90 hover:bg-red-700 hover:scale-105 hover:shadow-xl shadow-red-700/50">
+                Assinar
+            </button>
         </div>
+
     </section>
 
+    <footer
+        class="px-6 md:px-16 py-20 border-t border-neutral-800 mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto">
+        <div class="flex flex-col items-start mb-5">
+            <img src="images/logos_netflix.png" alt="Logo" class="w-32 mb-4" />
+            <p class="text-neutral-600 text-sm tracking-wide select-none">
+                © 2025 <span class="text-red-600">Letrista</span>. <br>
+                Todos os direitos reservados.
+            </p>
+        </div>
+        <div>
+            <h3 class="font-semibold mb-4 text-red-600">Empresa</h3>
+            <p class="text-neutral-400">Sobre Nós</p>
+            <p class="text-neutral-400">Contato</p>
+            <p class="text-neutral-400">Carreiras</p>
+            <p class="text-neutral-400">Blog</p>
+        </div>
+        <div>
+            <h3 class="font-semibold mb-4 text-red-600">Ajuda</h3>
+            <p class="text-neutral-400">FAQ</p>
+            <p class="text-neutral-400">Central de Ajuda</p>
+            <p class="text-neutral-400">Conta</p>
+        </div>
+        <div>
+            <h3 class="font-semibold mb-4 text-red-600">Baixe o App</h3>
+            <div class="flex gap-4">
+                <img src="images/app-store.png" alt="App Store" class="w-28" />
+                <img src="images/google-play.png" alt="Google Play" class="w-28" />
+            </div>
+        </div>
+    </footer>
 
-    <!-- Seção Footer -->
-    <section class="footer">
-        <div class="footer-header">
-            <img src="images/logos_netflix.png" alt="">
-            <p>Streaming sem anúncios e <br> mensalidade acessível</p>
-        </div>
-        <div class="footer-content">
-            <h2>Empresa</h2>
-            <div class="footer-text">
-                <p>Sobre Nós</p>
-                <p>Contato</p>
-                <p>Carreiras</p>
-                <p>Blog</p>
-                <p>Relações com Investidores</p>
-            </div>
-        </div>
-        <div class="footer-content">
-            <h2>Obtenha Ajuda</h2>
-            <div class="footer-text">
-                <p>FAQ</p>
-                <p>Central de Ajuda</p>
-                <p>Conta</p>
-            </div>
-        </div>
-        <div class="footer-content">
-            <h2>Outros</h2>
-            <div class="footer-text">
-                <p>Resgatar Cartão Presente</p>
-                <p>Netflix Originals</p>
-                <p>Centro de Mídia</p>
-                <p>Blog</p>
-                <p>Relações com Investidores</p>
-            </div>
-        </div>
-        <div class="footer-content">
-            <h2>Baixe Nossos Aplicativos</h2>
-            <div class="footer-image">
-                <a href="">
-                    <img src="images/app-store.png" alt="">
-                    <img src="images/google-play.png" alt="">
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <script src="js/main.js"></script>
 </body>
 
 </html>
