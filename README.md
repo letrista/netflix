@@ -1,7 +1,7 @@
 
 <h1 align="center">Netflix | Redesign</h1>
 <p align="center">
-  <b>Slicing UI</b> • Front-End 💻 • TailwindCSS 🖌️ • Responsividade 📺
+  <b>Slicing UI</b> • Front-End 💻 • TailwindCSS 🖌️ • Responsiveness 📺
 </p>
 
 ---
